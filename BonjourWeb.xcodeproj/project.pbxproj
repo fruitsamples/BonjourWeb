@@ -14,12 +14,12 @@
 		28141FFC0D6E783400D05362 /* BonjourWebAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 28141FFB0D6E783400D05362 /* BonjourWebAppDelegate.m */; };
 		2814201F0D6E78B100D05362 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D3623EB0D0F72F000981E51 /* CoreGraphics.framework */; };
 		2883CB400DE2CC1800AFA03B /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2883CB3F0DE2CC1800AFA03B /* Icon.png */; };
-		28D0B02C0DA5629700559A9D /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28D0B02B0DA5629700559A9D /* MainWindow.xib */; };
 		4ADC7FB80DDD21B500F4B61B /* BonjourBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADC7FB10DDD21B500F4B61B /* BonjourBrowser.m */; };
 		4ADC7FB90DDD21B500F4B61B /* BrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADC7FB30DDD21B500F4B61B /* BrowserViewController.m */; };
 		4ADC7FBA0DDD21B500F4B61B /* DomainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADC7FB50DDD21B500F4B61B /* DomainViewController.m */; };
 		4ADC7FBB0DDD21B500F4B61B /* SimpleEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADC7FB70DDD21B500F4B61B /* SimpleEditViewController.m */; };
-		84E7B4420DF4908A0053A6B2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 84E7B4410DF4908A0053A6B2 /* Localizable.strings */; };
+		533541920F94E6F300F4AF08 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5335418E0F94E6F300F4AF08 /* Localizable.strings */; };
+		533541930F94E6F300F4AF08 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 533541900F94E6F300F4AF08 /* MainWindow.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,7 +32,6 @@
 		28141FFA0D6E783400D05362 /* BonjourWebAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BonjourWebAppDelegate.h; sourceTree = "<group>"; };
 		28141FFB0D6E783400D05362 /* BonjourWebAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BonjourWebAppDelegate.m; sourceTree = "<group>"; };
 		2883CB3F0DE2CC1800AFA03B /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
-		28D0B02B0DA5629700559A9D /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4ADC7FB00DDD21B500F4B61B /* BonjourBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BonjourBrowser.h; path = BonjourSupport/BonjourBrowser.h; sourceTree = "<group>"; };
 		4ADC7FB10DDD21B500F4B61B /* BonjourBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BonjourBrowser.m; path = BonjourSupport/BonjourBrowser.m; sourceTree = "<group>"; };
@@ -42,8 +41,9 @@
 		4ADC7FB50DDD21B500F4B61B /* DomainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DomainViewController.m; path = BonjourSupport/DomainViewController.m; sourceTree = "<group>"; };
 		4ADC7FB60DDD21B500F4B61B /* SimpleEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SimpleEditViewController.h; path = BonjourSupport/SimpleEditViewController.h; sourceTree = "<group>"; };
 		4ADC7FB70DDD21B500F4B61B /* SimpleEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SimpleEditViewController.m; path = BonjourSupport/SimpleEditViewController.m; sourceTree = "<group>"; };
+		5335418F0F94E6F300F4AF08 /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		533541910F94E6F300F4AF08 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
 		844867370DB92514009556CD /* ReadMe.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe.txt; sourceTree = "<group>"; wrapsLines = 1; };
-		84E7B4410DF4908A0053A6B2 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,11 +104,11 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				28D0B02B0DA5629700559A9D /* MainWindow.xib */,
+				5335418E0F94E6F300F4AF08 /* Localizable.strings */,
+				533541900F94E6F300F4AF08 /* MainWindow.xib */,
 				1D4F2F990D10AC310045FB13 /* Default.png */,
 				2883CB3F0DE2CC1800AFA03B /* Icon.png */,
 				8D1107310486CEB800E47090 /* Info.plist */,
-				84E7B4410DF4908A0053A6B2 /* Localizable.strings */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -166,6 +166,13 @@
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "BonjourWeb" */;
 			compatibilityVersion = "Xcode 3.1";
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+				en,
+			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -181,9 +188,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D4F2F9A0D10AC310045FB13 /* Default.png in Resources */,
-				28D0B02C0DA5629700559A9D /* MainWindow.xib in Resources */,
 				2883CB400DE2CC1800AFA03B /* Icon.png in Resources */,
-				84E7B4420DF4908A0053A6B2 /* Localizable.strings in Resources */,
+				533541920F94E6F300F4AF08 /* Localizable.strings in Resources */,
+				533541930F94E6F300F4AF08 /* MainWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,6 +212,25 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		5335418E0F94E6F300F4AF08 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5335418F0F94E6F300F4AF08 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		533541900F94E6F300F4AF08 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				533541910F94E6F300F4AF08 /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		1D6058940D05DD3E006BFB54 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -220,6 +246,7 @@
 				INFOPLIST_FILE = Info.plist;
 				PREBINDING = NO;
 				PRODUCT_NAME = BonjourWeb;
+				SDKROOT = iphoneos3.0;
 			};
 			name = Debug;
 		};
@@ -235,6 +262,7 @@
 				INFOPLIST_FILE = Info.plist;
 				PREBINDING = NO;
 				PRODUCT_NAME = BonjourWeb;
+				SDKROOT = iphoneos3.0;
 			};
 			name = Release;
 		};
@@ -249,7 +277,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
-				SDKROOT = iphonesimulator2.0;
+				SDKROOT = iphonesimulator3.0;
 			};
 			name = Debug;
 		};
@@ -263,7 +291,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				SDKROOT = iphonesimulator2.0;
+				SDKROOT = iphonesimulator3.0;
 			};
 			name = Release;
 		};

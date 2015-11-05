@@ -1,8 +1,6 @@
 /*
-
-File: BrowserViewController.m
-Abstract: 
- View controller for the service instance list.
+     File: BrowserViewController.m
+ Abstract:  View controller for the service instance list.
  This object manages a NSNetServiceBrowser configured to look for Bonjour
 services.
  It has an array of NSNetService objects that are displayed in a table view.
@@ -14,49 +12,50 @@ array.
 net service.
  When that resolution completes, the delegate is called with the corresponding
 NSNetService.
+
+  Version: 2.8
  
-
-Version: 2.5
-
-Disclaimer: IMPORTANT:  This Apple software is supplied to you by Apple Inc.
-("Apple") in consideration of your agreement to the following terms, and your
-use, installation, modification or redistribution of this Apple software
-constitutes acceptance of these terms.  If you do not agree with these terms,
-please do not use, install, modify or redistribute this Apple software.
-
-In consideration of your agreement to abide by the following terms, and subject
-to these terms, Apple grants you a personal, non-exclusive license, under
-Apple's copyrights in this original Apple software (the "Apple Software"), to
-use, reproduce, modify and redistribute the Apple Software, with or without
-modifications, in source and/or binary forms; provided that if you redistribute
-the Apple Software in its entirety and without modifications, you must retain
-this notice and the following text and disclaimers in all such redistributions
-of the Apple Software.
-Neither the name, trademarks, service marks or logos of Apple Inc. may be used
-to endorse or promote products derived from the Apple Software without specific
-prior written permission from Apple.  Except as expressly stated in this notice,
-no other rights or licenses, express or implied, are granted by Apple herein,
-including but not limited to any patent rights that may be infringed by your
-derivative works or by other works in which the Apple Software may be
-incorporated.
-
-The Apple Software is provided by Apple on an "AS IS" basis.  APPLE MAKES NO
-WARRANTIES, EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION THE IMPLIED
-WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY AND FITNESS FOR A PARTICULAR
-PURPOSE, REGARDING THE APPLE SOFTWARE OR ITS USE AND OPERATION ALONE OR IN
-COMBINATION WITH YOUR PRODUCTS.
-
-IN NO EVENT SHALL APPLE BE LIABLE FOR ANY SPECIAL, INDIRECT, INCIDENTAL OR
-CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
-GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
-ARISING IN ANY WAY OUT OF THE USE, REPRODUCTION, MODIFICATION AND/OR
-DISTRIBUTION OF THE APPLE SOFTWARE, HOWEVER CAUSED AND WHETHER UNDER THEORY OF
-CONTRACT, TORT (INCLUDING NEGLIGENCE), STRICT LIABILITY OR OTHERWISE, EVEN IF
-APPLE HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-Copyright (C) 2008 Apple Inc. All Rights Reserved.
-
-*/
+ Disclaimer: IMPORTANT:  This Apple software is supplied to you by Apple
+ Inc. ("Apple") in consideration of your agreement to the following
+ terms, and your use, installation, modification or redistribution of
+ this Apple software constitutes acceptance of these terms.  If you do
+ not agree with these terms, please do not use, install, modify or
+ redistribute this Apple software.
+ 
+ In consideration of your agreement to abide by the following terms, and
+ subject to these terms, Apple grants you a personal, non-exclusive
+ license, under Apple's copyrights in this original Apple software (the
+ "Apple Software"), to use, reproduce, modify and redistribute the Apple
+ Software, with or without modifications, in source and/or binary forms;
+ provided that if you redistribute the Apple Software in its entirety and
+ without modifications, you must retain this notice and the following
+ text and disclaimers in all such redistributions of the Apple Software.
+ Neither the name, trademarks, service marks or logos of Apple Inc. may
+ be used to endorse or promote products derived from the Apple Software
+ without specific prior written permission from Apple.  Except as
+ expressly stated in this notice, no other rights or licenses, express or
+ implied, are granted by Apple herein, including but not limited to any
+ patent rights that may be infringed by your derivative works or by other
+ works in which the Apple Software may be incorporated.
+ 
+ The Apple Software is provided by Apple on an "AS IS" basis.  APPLE
+ MAKES NO WARRANTIES, EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION
+ THE IMPLIED WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY AND FITNESS
+ FOR A PARTICULAR PURPOSE, REGARDING THE APPLE SOFTWARE OR ITS USE AND
+ OPERATION ALONE OR IN COMBINATION WITH YOUR PRODUCTS.
+ 
+ IN NO EVENT SHALL APPLE BE LIABLE FOR ANY SPECIAL, INDIRECT, INCIDENTAL
+ OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+ SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+ INTERRUPTION) ARISING IN ANY WAY OUT OF THE USE, REPRODUCTION,
+ MODIFICATION AND/OR DISTRIBUTION OF THE APPLE SOFTWARE, HOWEVER CAUSED
+ AND WHETHER UNDER THEORY OF CONTRACT, TORT (INCLUDING NEGLIGENCE),
+ STRICT LIABILITY OR OTHERWISE, EVEN IF APPLE HAS BEEN ADVISED OF THE
+ POSSIBILITY OF SUCH DAMAGE.
+ 
+ Copyright (C) 2009 Apple Inc. All Rights Reserved.
+ 
+ */
 
 #import "BrowserViewController.h"
 
@@ -97,7 +96,6 @@ Copyright (C) 2008 Apple Inc. All Rights Reserved.
 @synthesize needsActivityIndicator = _needsActivityIndicator;
 @dynamic timer;
 @synthesize initialWaitOver = _initialWaitOver;
-
 
 - (id)initWithTitle:(NSString*)title showDisclosureIndicators:(BOOL)show showCancelButton:(BOOL)showCancelButton {
 	
@@ -192,26 +190,29 @@ Copyright (C) 2008 Apple Inc. All Rights Reserved.
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	
 	static NSString *tableCellIdentifier = @"UITableViewCell";
 	UITableViewCell *cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:tableCellIdentifier];
 	if (cell == nil) {
-		cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:tableCellIdentifier] autorelease];
+		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tableCellIdentifier] autorelease];
 	}
 	
 	NSUInteger count = [self.services count];
 	if (count == 0 && self.searchingForServicesString) {
         // If there are no services and searchingForServicesString is set, show one row explaining that to the user.
-        cell.text = self.searchingForServicesString;
-		cell.textColor = [UIColor colorWithWhite:0.5 alpha:0.5];
+        cell.textLabel.text = self.searchingForServicesString;
+		cell.textLabel.textColor = [UIColor colorWithWhite:0.5 alpha:0.5];
 		cell.accessoryType = UITableViewCellAccessoryNone;
+		// Make sure to get rid of the activity indicator that may be showing if we were resolving cell zero but
+		// then got didRemoveService callbacks for all services (e.g. the network connection went down).
+		if (cell.accessoryView)
+			cell.accessoryView = nil;
 		return cell;
 	}
 	
 	// Set up the text for the cell
 	NSNetService* service = [self.services objectAtIndex:indexPath.row];
-	cell.text = [service name];
-	cell.textColor = [UIColor blackColor];
+	cell.textLabel.text = [service name];
+	cell.textLabel.textColor = [UIColor blackColor];
 	cell.accessoryType = self.showDisclosureIndicators ? UITableViewCellAccessoryDisclosureIndicator : UITableViewCellAccessoryNone;
 	
 	// Note that the underlying array could have changed, and we want to show the activity indicator on the correct cell
@@ -238,16 +239,16 @@ Copyright (C) 2008 Apple Inc. All Rights Reserved.
 
 
 - (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	// Ignore the selection if there are no services.
+	// Ignore the selection if there are no services as the searchingForServicesString cell
+	// may be visible and tapping it would do nothing
 	if ([self.services count] == 0)
 		return nil;
-
+	
 	return indexPath;
 }
 
 
 - (void)stopCurrentResolve {
-
 	self.needsActivityIndicator = NO;
 	self.timer = nil;
 
@@ -257,32 +258,47 @@ Copyright (C) 2008 Apple Inc. All Rights Reserved.
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	// If another resolve was running, stop it first
+	// If another resolve was running, stop it & remove the activity indicator from that cell
+	if (self.currentResolve) {
+		// Get the indexPath for the active resolve cell
+		NSIndexPath* indexPath = [NSIndexPath indexPathForRow:[self.services indexOfObject:self.currentResolve] inSection:0];
+		
+		// Stop the current resolve, which will also set self.needsActivityIndicator
+		[self stopCurrentResolve];
+		
+		// If we found the indexPath for the row, reload that cell to remove the activity indicator
+		if (indexPath.row != NSNotFound)
+			[self.tableView reloadRowsAtIndexPaths:[NSArray	arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationNone];
+	}
 	
-	[self stopCurrentResolve];
+	// Then set the current resolve to the service corresponding to the tapped cell
 	self.currentResolve = [self.services objectAtIndex:indexPath.row];
-
 	[self.currentResolve setDelegate:self];
+	
 	// Attempt to resolve the service. A value of 0.0 sets an unlimited time to resolve it. The user can
 	// choose to cancel the resolve by selecting another service in the table view.
 	[self.currentResolve resolveWithTimeout:0.0];
 	
 	// Make sure we give the user some feedback that the resolve is happening.
-	// We will be called back asynchronously, so we don't want the user to think
-	// we're just stuck.
+	// We will be called back asynchronously, so we don't want the user to think we're just stuck.
+	// We delay showing this activity indicator in case the service is resolved quickly.
 	self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(showWaiting:) userInfo:self.currentResolve repeats:NO];
-	[self.tableView reloadData];
 }
+
 
 // If necessary, sets up state to show an activity indicator to let the user know that a resolve is occuring.
 - (void)showWaiting:(NSTimer*)timer {
-	
 	if (timer == self.timer) {
-		[self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
 		NSNetService* service = (NSNetService*)[self.timer userInfo];
 		if (self.currentResolve == service) {
 			self.needsActivityIndicator = YES;
-			[self.tableView reloadData];
+
+			NSIndexPath* indexPath = [NSIndexPath indexPathForRow:[self.services indexOfObject:self.currentResolve] inSection:0];
+			if (indexPath.row != NSNotFound) {
+				[self.tableView reloadRowsAtIndexPaths:[NSArray	arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationNone];
+				// Deselect the row since the activity indicator shows the user something is happening.
+				[self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+			}
 		}
 	}
 }
@@ -303,9 +319,8 @@ Copyright (C) 2008 Apple Inc. All Rights Reserved.
 
 
 - (void)netServiceBrowser:(NSNetServiceBrowser*)netServiceBrowser didRemoveService:(NSNetService*)service moreComing:(BOOL)moreComing {
-	// If a service went away, stop resolving it if it's currently being resolve,
+	// If a service went away, stop resolving it if it's currently being resolved,
 	// remove it from the list and update the table view if no more events are queued.
-	
 	if (self.currentResolve && [service isEqual:self.currentResolve]) {
 		[self stopCurrentResolve];
 	}

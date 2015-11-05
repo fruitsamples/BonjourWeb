@@ -1,4 +1,3 @@
-
 BonjourWeb
 
 ===========================================================================
@@ -11,16 +10,15 @@ This application illustrates the fundamentals of browsing for network services u
 ===========================================================================
 BUILD REQUIREMENTS
 
-Mac OS X 10.5.3, Xcode 3.1, iPhone OS 2.0
+iPhone OS SDK 3.0
 
 ===========================================================================
 RUNTIME REQUIREMENTS
 
-Mac OS X 10.5.3, iPhone OS 2.0
+iPhone OS SDK 3.0
 
 ===========================================================================
 PACKAGING LIST
-
 
 Classes/BonjourWebAppDelegate.h
 Classes/BonjourWebAppDelegate.m
@@ -60,10 +58,17 @@ BonjourSupport/SimpleEditViewController.h
 BonjourSupport/SimpleEditViewController.m
 View controller which allows the user to enter a small amount of text.
 
-
-
 ===========================================================================
 CHANGES FROM PREVIOUS VERSIONS
+
+Version 2.8
+- Fixed bug updating cells when all services are removed during a resolve.
+
+Version 2.7
+- Fixed table selection bug when no services are listed. 
+
+Version 2.6
+- Upgraded for 3.0 SDK due to deprecated APIs; in "cellForRowAtIndexPath" it now uses UITableViewCell's initWithStyle. 
 
 Version 2.5
 - Updated for and tested with iPhone OS 2.0. First public release.
@@ -94,4 +99,4 @@ Version 2.0
 -- Uses a nib file for the main window.
 
 ================================================================================
-Copyright (C) 2008 Apple Inc. All rights reserved.
+Copyright (C) 2008-2009 Apple Inc. All rights reserved.
