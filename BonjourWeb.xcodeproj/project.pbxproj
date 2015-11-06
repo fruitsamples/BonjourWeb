@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		1D4F2F9A0D10AC310045FB13 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D4F2F990D10AC310045FB13 /* Default.png */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
-		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
-		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		28141FFC0D6E783400D05362 /* BonjourWebAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 28141FFB0D6E783400D05362 /* BonjourWebAppDelegate.m */; };
-		2814201F0D6E78B100D05362 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D3623EB0D0F72F000981E51 /* CoreGraphics.framework */; };
 		2883CB400DE2CC1800AFA03B /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2883CB3F0DE2CC1800AFA03B /* Icon.png */; };
+		2B449E2911C8326F00B24959 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B449E2811C8326F00B24959 /* CoreGraphics.framework */; };
+		2B449E2B11C8327500B24959 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B449E2A11C8327500B24959 /* Foundation.framework */; };
+		2B449E2D11C8327B00B24959 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B449E2C11C8327B00B24959 /* UIKit.framework */; };
 		4ADC7FB80DDD21B500F4B61B /* BonjourBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADC7FB10DDD21B500F4B61B /* BonjourBrowser.m */; };
 		4ADC7FB90DDD21B500F4B61B /* BrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADC7FB30DDD21B500F4B61B /* BrowserViewController.m */; };
 		4ADC7FBA0DDD21B500F4B61B /* DomainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ADC7FB50DDD21B500F4B61B /* DomainViewController.m */; };
@@ -23,16 +23,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		1D3623EB0D0F72F000981E51 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		1D4F2F990D10AC310045FB13 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		1D6058910D05DD3D006BFB54 /* BonjourWeb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BonjourWeb.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		28141FF50D6E774E00D05362 /* BonjourWeb_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BonjourWeb_Prefix.pch; sourceTree = "<group>"; };
 		28141FFA0D6E783400D05362 /* BonjourWebAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BonjourWebAppDelegate.h; sourceTree = "<group>"; };
 		28141FFB0D6E783400D05362 /* BonjourWebAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BonjourWebAppDelegate.m; sourceTree = "<group>"; };
 		2883CB3F0DE2CC1800AFA03B /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2B449E2811C8326F00B24959 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2B449E2A11C8327500B24959 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		2B449E2C11C8327B00B24959 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4ADC7FB00DDD21B500F4B61B /* BonjourBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BonjourBrowser.h; path = BonjourSupport/BonjourBrowser.h; sourceTree = "<group>"; };
 		4ADC7FB10DDD21B500F4B61B /* BonjourBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BonjourBrowser.m; path = BonjourSupport/BonjourBrowser.m; sourceTree = "<group>"; };
 		4ADC7FB20DDD21B500F4B61B /* BrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BrowserViewController.h; path = BonjourSupport/BrowserViewController.h; sourceTree = "<group>"; };
@@ -52,9 +52,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
-				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
-				2814201F0D6E78B100D05362 /* CoreGraphics.framework in Frameworks */,
+				2B449E2911C8326F00B24959 /* CoreGraphics.framework in Frameworks */,
+				2B449E2B11C8327500B24959 /* Foundation.framework in Frameworks */,
+				2B449E2D11C8327B00B24959 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,9 +116,9 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1D3623EB0D0F72F000981E51 /* CoreGraphics.framework */,
-				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
-				1D30AB110D05D00D00671497 /* Foundation.framework */,
+				2B449E2811C8326F00B24959 /* CoreGraphics.framework */,
+				2B449E2A11C8327500B24959 /* Foundation.framework */,
+				2B449E2C11C8327B00B24959 /* UIKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -246,7 +246,7 @@
 				INFOPLIST_FILE = Info.plist;
 				PREBINDING = NO;
 				PRODUCT_NAME = BonjourWeb;
-				SDKROOT = iphoneos3.0;
+				SDKROOT = iphoneos4.0;
 			};
 			name = Debug;
 		};
@@ -262,7 +262,7 @@
 				INFOPLIST_FILE = Info.plist;
 				PREBINDING = NO;
 				PRODUCT_NAME = BonjourWeb;
-				SDKROOT = iphoneos3.0;
+				SDKROOT = iphoneos4.0;
 			};
 			name = Release;
 		};
@@ -277,7 +277,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
-				SDKROOT = iphonesimulator3.0;
+				SDKROOT = iphoneos4.0;
 			};
 			name = Debug;
 		};
@@ -291,7 +291,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				SDKROOT = iphonesimulator3.0;
+				SDKROOT = iphoneos4.0;
 			};
 			name = Release;
 		};

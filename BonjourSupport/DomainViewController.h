@@ -14,7 +14,7 @@ is displayed in the second section of the table.
  When an item in the table view is selected, the delegate is called with the
 corresponding domain.
  
- Version: 2.8 
+ Version: 2.9 
  
 Disclaimer: IMPORTANT:  This Apple software is supplied to you by Apple 
 Inc. ("Apple") in consideration of your agreement to the following 
@@ -54,7 +54,7 @@ AND WHETHER UNDER THEORY OF CONTRACT, TORT (INCLUDING NEGLIGENCE),
 STRICT LIABILITY OR OTHERWISE, EVEN IF APPLE HAS BEEN ADVISED OF THE 
 POSSIBILITY OF SUCH DAMAGE. 
  
-Copyright (C) 2009 Apple Inc. All Rights Reserved. 
+Copyright (C) 2010 Apple Inc. All Rights Reserved. 
  
 
 */
@@ -72,7 +72,7 @@ Copyright (C) 2009 Apple Inc. All Rights Reserved.
 - (void) domainViewController:(DomainViewController*)dvc didSelectDomain:(NSString*)domain;
 @end
 
-@interface DomainViewController : UITableViewController <SimpleEditViewControllerDelegate> {
+@interface DomainViewController : UITableViewController <SimpleEditViewControllerDelegate, NSNetServiceBrowserDelegate> {
 	id<DomainViewControllerDelegate> _delegate;
 	BOOL _showDisclosureIndicators;
 	NSMutableArray* _domains;

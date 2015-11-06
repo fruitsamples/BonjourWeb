@@ -3,7 +3,7 @@
     File: main.m 
 Abstract:  The main entry point for the BonjourWeb application
  
- Version: 2.8 
+ Version: 2.9 
  
 Disclaimer: IMPORTANT:  This Apple software is supplied to you by Apple 
 Inc. ("Apple") in consideration of your agreement to the following 
@@ -43,7 +43,7 @@ AND WHETHER UNDER THEORY OF CONTRACT, TORT (INCLUDING NEGLIGENCE),
 STRICT LIABILITY OR OTHERWISE, EVEN IF APPLE HAS BEEN ADVISED OF THE 
 POSSIBILITY OF SUCH DAMAGE. 
  
-Copyright (C) 2009 Apple Inc. All Rights Reserved. 
+Copyright (C) 2010 Apple Inc. All Rights Reserved. 
  
 
 */

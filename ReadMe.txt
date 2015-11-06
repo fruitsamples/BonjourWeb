@@ -10,12 +10,12 @@ This application illustrates the fundamentals of browsing for network services u
 ===========================================================================
 BUILD REQUIREMENTS
 
-iPhone OS SDK 3.0
+iOS SDK 4.0
 
 ===========================================================================
 RUNTIME REQUIREMENTS
 
-iPhone OS SDK 3.0
+iOS 4.0
 
 ===========================================================================
 PACKAGING LIST
@@ -61,6 +61,9 @@ View controller which allows the user to enter a small amount of text.
 ===========================================================================
 CHANGES FROM PREVIOUS VERSIONS
 
+Version 2.9
+- Updated to work with iOS SDK 4.0.
+
 Version 2.8
 - Fixed bug updating cells when all services are removed during a resolve.
 
@@ -99,4 +102,4 @@ Version 2.0
 -- Uses a nib file for the main window.
 
 ================================================================================
-Copyright (C) 2008-2009 Apple Inc. All rights reserved.
+Copyright (C) 2008-2010 Apple Inc. All rights reserved.
